@@ -5,28 +5,87 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-red.svg)](https://pytorch.org)
 
-> A production-grade text-to-speech server with robust text processing, zero-default audio effects, and local playback control.
+> **A lightning-fast, production-grade text-to-speech server with OpenAI-style quality, robust text processing, and accessibility-first design. Processing time: ~1 second with nearly instant output.**
+
+*Created by [nodeblackbox](https://github.com/nodeblackbox) - Making accessibility available for everyone.*
 
 ## ✨ Overview
 
-The Complete Kokoro TTS API is a high-performance, feature-rich text-to-speech server designed for production environments. It combines advanced neural TTS capabilities with robust text processing, flexible audio effects, and comprehensive playback controls.
+The Complete Kokoro TTS API delivers **OpenAI-style text-to-speech quality** with exceptional performance and accessibility features. Designed with a commitment that **accessibility should be for everyone**, this API provides crystal-clear voices especially suitable for dyslexic users and assistive technology integration.
+
+**🚀 Performance Highlights:**
+- **~1 second total processing time**
+- **Nearly instant audio output**
+- **GPU acceleration available**
+- **Real-time streaming capabilities**
+
+## 🎯 Accessibility & Integration
+
+### 🔗 Read Aloud Chrome Extension Integration
+
+This API seamlessly integrates with the **[Read Aloud](https://chromewebstore.google.com/detail/read-aloud-a-text-to-spee/hdhinadidafjejdhmfkjgnolgimiaplp)** Chrome extension, providing an excellent solution for dyslexic users and anyone who benefits from text-to-speech technology.
+
+**Setup Instructions:**
+
+1. **Install the Extension**: Add [Read Aloud](https://chromewebstore.google.com/detail/read-aloud-a-text-to-spee/hdhinadidafjejdhmfkjgnolgimiaplp) to Chrome
+2. **Configure API Endpoint**: `http://127.0.0.1:5000/v1`
+3. **API Key**: `your-secret-key`
+4. **Select from 28 High-Quality Voices** (see voice configuration below)
+
+### 🎤 Available Voices for Read Aloud
+
+```json
+[
+  { "lang": "en-US", "model": "tts-1", "voice": "af_heart" },
+  { "lang": "en-US", "model": "tts-1", "voice": "af_bella" },
+  { "lang": "en-US", "model": "tts-1", "voice": "af_nicole" },
+  { "lang": "en-US", "model": "tts-1", "voice": "af_aoede" },
+  { "lang": "en-US", "model": "tts-1", "voice": "af_kore" },
+  { "lang": "en-US", "model": "tts-1", "voice": "af_sarah" },
+  { "lang": "en-US", "model": "tts-1", "voice": "af_nova" },
+  { "lang": "en-US", "model": "tts-1", "voice": "af_sky" },
+  { "lang": "en-US", "model": "tts-1", "voice": "af_alloy" },
+  { "lang": "en-US", "model": "tts-1", "voice": "af_jessica" },
+  { "lang": "en-US", "model": "tts-1", "voice": "af_river" },
+  { "lang": "en-US", "model": "tts-1", "voice": "am_michael" },
+  { "lang": "en-US", "model": "tts-1", "voice": "am_fenrir" },
+  { "lang": "en-US", "model": "tts-1", "voice": "am_puck" },
+  { "lang": "en-US", "model": "tts-1", "voice": "am_echo" },
+  { "lang": "en-US", "model": "tts-1", "voice": "am_eric" },
+  { "lang": "en-US", "model": "tts-1", "voice": "am_liam" },
+  { "lang": "en-US", "model": "tts-1", "voice": "am_onyx" },
+  { "lang": "en-US", "model": "tts-1", "voice": "am_santa" },
+  { "lang": "en-US", "model": "tts-1", "voice": "am_adam" },
+  { "lang": "en-GB", "model": "tts-1", "voice": "bf_emma" },
+  { "lang": "en-GB", "model": "tts-1", "voice": "bf_isabella" },
+  { "lang": "en-GB", "model": "tts-1", "voice": "bf_alice" },
+  { "lang": "en-GB", "model": "tts-1", "voice": "bf_lily" },
+  { "lang": "en-GB", "model": "tts-1", "voice": "bm_george" },
+  { "lang": "en-GB", "model": "tts-1", "voice": "bm_fable" },
+  { "lang": "en-GB", "model": "tts-1", "voice": "bm_lewis" },
+  { "lang": "en-GB", "model": "tts-1", "voice": "bm_daniel" }
+]
+```
 
 ## 🚀 Features
 
 ### Core Features
 - **🔧 Robust Text Processing**: Intelligent handling of markdown, Unicode characters, numbers, abbreviations, and special formatting
+- **⚡ Ultra-Fast Performance**: ~1 second total processing with nearly instant output
 - **🎚️ Zero-Default Effects**: Clean audio output with effects only when explicitly configured
 - **🎵 Local Playback Control**: Built-in audio playback with interrupt capability and session management
 - **📡 Real-time Streaming**: Live audio streaming support for compatible clients
 - **🎼 Advanced Audio Effects**: FIXED and robust pitch shifting with librosa compatibility
 - **🌐 Browser Integration**: Full CORS support for browser extensions and web applications
+- **♿ Accessibility First**: Crystal-clear voices optimized for dyslexic users and assistive technology
 
 ### Audio Processing
-- Multiple voice support
+- **28 High-quality voices** (20 US English, 8 British English)
+- **OpenAI-style TTS quality** with superior clarity
 - Various audio format outputs
 - Pitch shifting and formant modification
 - Dynamic range compression
-- Professional-grade audio quality
+- Professional-grade audio processing
 
 ### Developer Experience
 - RESTful API design
@@ -34,6 +93,7 @@ The Complete Kokoro TTS API is a high-performance, feature-rich text-to-speech s
 - Comprehensive error handling
 - Session-based playback management
 - Easy integration with existing applications
+- Chrome extension compatibility
 
 ## 📋 Table of Contents
 
@@ -430,52 +490,45 @@ We welcome contributions! Please follow these steps:
 ## 📊 Performance
 
 ### Benchmarks
-- **Average Response Time**: ~0.8 seconds for 50-word text
+- **Average Response Time**: ~1 second for 50-word text
+- **Output Latency**: Nearly instant audio delivery
 - **Concurrent Requests**: Supports up to 10 simultaneous requests
 - **Memory Usage**: ~200MB baseline + ~50MB per active session
-- **GPU Acceleration**: 3x faster with CUDA-enabled PyTorch
+- **GPU Acceleration**: 3x faster processing with CUDA-enabled PyTorch
+- **Voice Quality**: OpenAI-comparable clarity and naturalness
 
 ### Optimization Tips
-- Use GPU acceleration when available
+- Use GPU acceleration when available for fastest processing
 - Enable caching for repeated requests
 - Batch multiple requests when possible
 - Use streaming for long-form content
+- Perfect for real-time applications and accessibility tools
 
-## 🐛 Troubleshooting
+## 🌟 Accessibility Statement
 
-### Common Issues
+**We believe accessibility should be for everyone.** This API is specifically designed with dyslexic users and assistive technology in mind, providing:
 
-**ImportError: No module named 'torch'**
-```bash
-pip install torch torchaudio --index-url https://download.pytorch.org/whl/cpu
-```
+- **Crystal-clear voice quality** optimized for comprehension
+- **Multiple accent options** (US and British English)
+- **Fast processing** for responsive user experience
+- **Browser extension compatibility** for seamless web integration
+- **Professional-grade audio** without distortion or artifacts
 
-**CUDA out of memory**
-```bash
-export CUDA_VISIBLE_DEVICES=""  # Force CPU usage
-```
-
-**Port already in use**
-```bash
-export TTS_PORT=5001  # Use different port
-```
-
-### Getting Help
-- 📖 Check the [documentation](docs/)
-- 🐛 Report bugs in [Issues](https://github.com/your-username/Kokoro-Voice-Api/issues)
-- 💬 Join our [Discord community](https://discord.gg/your-invite)
-- 📧 Email support: support@your-domain.com
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+### Perfect for:
+- 📚 **Dyslexic students and professionals**
+- 👩‍🦯 **Users with visual impairments**
+- 🧠 **People with learning differences**
+- 👥 **Anyone who benefits from audio content**
+- 🌐 **Web accessibility implementations**
 
 ## 🙏 Acknowledgments
 
+- **[nodeblackbox](https://github.com/nodeblackbox)** - Project creator and maintainer
 - **Kokoro TTS Team** for the underlying neural TTS technology
 - **PyTorch Team** for the deep learning framework
 - **Librosa Contributors** for audio processing capabilities
 - **Flask Community** for the web framework
+- **Accessibility advocates** who inspire inclusive technology
 
 ---
 
@@ -483,6 +536,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **[⬆ Back to Top](#-complete-kokoro-tts-api)**
 
-Made with ❤️ by the Kokoro TTS Community
+Made with ❤️ for accessibility by [nodeblackbox](https://github.com/nodeblackbox)
+
+*"Accessibility should be for everyone"*
 
 </div>
