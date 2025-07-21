@@ -1,0 +1,35 @@
+# Core Dependencies
+flask>=2.3.0,<3.0.0
+flask-cors>=4.0.0,<5.0.0
+torch>=2.0.0,<3.0.0
+torchaudio>=2.0.0,<3.0.0
+
+# Kokoro TTS Model (install from source or pip if available)
+# kokoro>=0.1.0  # Uncomment if available via pip
+
+# Audio Processing
+librosa>=0.10.0,<1.0.0
+numpy>=1.24.0,<2.0.0
+scipy>=1.10.0,<2.0.0
+soundfile>=0.12.0,<1.0.0
+pydub>=0.25.0,<1.0.0
+resampy>=0.4.0,<1.0.0
+
+# Text Processing (Enhanced Features)
+num2words>=0.5.12,<1.0.0
+markdown>=3.4.0,<4.0.0
+unidecode>=1.3.0,<2.0.0
+regex>=2023.0.0,<2024.0.0
+
+# Web Server & API
+gunicorn>=21.0.0,<22.0.0
+requests>=2.31.0,<3.0.0
+
+# Utilities
+pyyaml>=6.0.0,<7.0.0
+
+# Optional Dependencies for Enhanced Features
+# Uncomment these for additional functionality:
+# markdown[extra]>=3.4.0,<4.0.0  # For advanced markdown processing
+# tinytag>=1.10.0,<2.0.0         # For audio file metadata
+# mutagen>=1.47.0,<2.0.0         # Alternative audio metadata library
