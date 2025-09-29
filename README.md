@@ -112,7 +112,7 @@ This API seamlessly integrates with the **[Read Aloud](https://chromewebstore.go
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/Kokoro-Voice-Api.git
+git clone https://github.com/nodeblackbox/Kokoro-Voice-Api.git
 cd Kokoro-Voice-Api
 
 # Install dependencies
@@ -139,7 +139,7 @@ curl -X POST \
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/your-username/Kokoro-Voice-Api.git
+   git clone https://github.com/nodeblackbox/Kokoro-Voice-Api.git
    cd Kokoro-Voice-Api
    ```
 
